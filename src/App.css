@@ -34,6 +34,10 @@
 .head {
   margin-top: 20px;
 }
+.dropdown {
+  margin: 20px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
