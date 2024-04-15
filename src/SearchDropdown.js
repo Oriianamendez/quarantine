@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 
-export function SearchDropdown({ searchText, onSearchTextChange }) {
+export function SearchDropdown({
+  searchText,
+  onSearchTextChange,
+
+  onOptionChange,
+}) {
   const [selectedOption, setSelectedOption] = useState("Options");
 
   const handleOptionSelect = (option) => {
     setSelectedOption(option);
+    onOptionChange(option);
   };
 
   return (
@@ -22,9 +28,9 @@ export function SearchDropdown({ searchText, onSearchTextChange }) {
           <a
             className="dropdown-item"
             href="#"
-            onClick={() => handleOptionSelect("ID")}
+            onClick={() => handleOptionSelect("id")}
           >
-            ID
+            id
           </a>
         </li>
         <li>
@@ -52,6 +58,105 @@ export function SearchDropdown({ searchText, onSearchTextChange }) {
             onClick={() => handleOptionSelect("correlationId")}
           >
             correlationId
+          </a>
+        </li>
+        <li>
+          <a
+            className="dropdown-item"
+            href="#"
+            onClick={() => handleOptionSelect("createdAt")}
+          >
+            createdAt
+          </a>
+        </li>
+        <li>
+          <a
+            className="dropdown-item"
+            href="#"
+            onClick={() => handleOptionSelect("currency")}
+          >
+            currency
+          </a>
+        </li>
+        <li>
+          <a
+            className="dropdown-item"
+            href="#"
+            onClick={() => handleOptionSelect("eventId")}
+          >
+            eventId
+          </a>
+        </li>
+        <li>
+          <a
+            className="dropdown-item"
+            href="#"
+            onClick={() => handleOptionSelect("failureReason")}
+          >
+            failureReason
+          </a>
+        </li>
+        <li>
+          <a
+            className="dropdown-item"
+            href="#"
+            onClick={() => handleOptionSelect("kafkaOffset")}
+          >
+            kafkaOffset
+          </a>
+        </li>
+        <li>
+          <a
+            className="dropdown-item"
+            href="#"
+            onClick={() => handleOptionSelect("kafkaPartition")}
+          >
+            kafkaPartition
+          </a>
+        </li>
+        <li>
+          <a
+            className="dropdown-item"
+            href="#"
+            onClick={() => handleOptionSelect("kafkaTopic")}
+          >
+            kafkaTopic
+          </a>
+        </li>
+        <li>
+          <a
+            className="dropdown-item"
+            href="#"
+            onClick={() => handleOptionSelect("publisherSystemId")}
+          >
+            publisherSystemId
+          </a>
+        </li>
+        <li>
+          <a
+            className="dropdown-item"
+            href="#"
+            onClick={() => handleOptionSelect("retryBudget")}
+          >
+            retryBudget
+          </a>
+        </li>
+        <li>
+          <a
+            className="dropdown-item"
+            href="#"
+            onClick={() => handleOptionSelect("retryCount")}
+          >
+            retryCount
+          </a>
+        </li>
+        <li>
+          <a
+            className="dropdown-item"
+            href="#"
+            onClick={() => handleOptionSelect("sequenceKey")}
+          >
+            sequenceKey
           </a>
         </li>
       </ul>

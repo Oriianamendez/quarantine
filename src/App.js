@@ -26,10 +26,12 @@ function InformationRow({ information }) {
   );
 }
 
-export function InformationTable({ information, searchText }) {
+export function InformationTable({ information, searchText, selectedOption }) {
   const rows = [];
   information.forEach((info) => {
-    if (!info.id.toLowerCase().startsWith(searchText.toLowerCase())) {
+    if (
+      !info[selectedOption].toLowerCase().startsWith(searchText.toLowerCase())
+    ) {
       return;
     }
     rows.push(<InformationRow information={info} key={info.id} />);

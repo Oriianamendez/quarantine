@@ -5,6 +5,7 @@ import { SearchDropdown } from "./SearchDropdown";
 export function FetchingInfo({}) {
   const [Info, setInfo] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [selectedOption, setSelectedOption] = useState("id");
 
   useEffect(() => {
     fetch("/input.json", { mode: "no-cors" })
@@ -23,16 +24,23 @@ export function FetchingInfo({}) {
       });
   }, []);
 
+  const handleOptionSelect = (option) => {
+    setSelectedOption(option);
+  };
+
   return (
     <div>
       <SearchDropdown
         searchText={searchText}
         onSearchTextChange={setSearchText}
+        selectedOption={selectedOption}
+        onOptionChange={handleOptionSelect}
       />
       <InformationTable
         information={Info}
         searchText={searchText}
         onSearchTextChange={setSearchText}
+        selectedOption={selectedOption}
       />
     </div>
   );
