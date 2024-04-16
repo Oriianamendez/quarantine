@@ -13,6 +13,28 @@ export function SearchDropdown({
     onOptionChange(option);
   };
 
+  const optionItems = [
+    "id",
+    "allocationNid",
+    "amount",
+    "correlationId",
+    "createdAt",
+    "currency",
+    "eventId",
+    "failureReason",
+    "kafkaOffset",
+    "kafkaPartition",
+    "kafkaTopic",
+    "publisherSystemId",
+    "retryBudget",
+    "retryCount",
+    "sequenceKey",
+  ];
+
+  optionItems.forEach((item) => {
+    return item;
+  });
+
   return (
     <div className="dropdown input-group mb-3">
       <button
@@ -24,141 +46,17 @@ export function SearchDropdown({
         {selectedOption}
       </button>
       <ul className="dropdown-menu">
-        <li>
-          <a
-            className="dropdown-item"
-            href="#"
-            onClick={() => handleOptionSelect("id")}
-          >
-            id
-          </a>
-        </li>
-        <li>
-          <a
-            className="dropdown-item"
-            href="#"
-            onClick={() => handleOptionSelect("allocationNid")}
-          >
-            allocationNid
-          </a>
-        </li>
-        <li>
-          <a
-            className="dropdown-item"
-            href="#"
-            onClick={() => handleOptionSelect("amount")}
-          >
-            amount
-          </a>
-        </li>
-        <li>
-          <a
-            className="dropdown-item"
-            href="#"
-            onClick={() => handleOptionSelect("correlationId")}
-          >
-            correlationId
-          </a>
-        </li>
-        <li>
-          <a
-            className="dropdown-item"
-            href="#"
-            onClick={() => handleOptionSelect("createdAt")}
-          >
-            createdAt
-          </a>
-        </li>
-        <li>
-          <a
-            className="dropdown-item"
-            href="#"
-            onClick={() => handleOptionSelect("currency")}
-          >
-            currency
-          </a>
-        </li>
-        <li>
-          <a
-            className="dropdown-item"
-            href="#"
-            onClick={() => handleOptionSelect("eventId")}
-          >
-            eventId
-          </a>
-        </li>
-        <li>
-          <a
-            className="dropdown-item"
-            href="#"
-            onClick={() => handleOptionSelect("failureReason")}
-          >
-            failureReason
-          </a>
-        </li>
-        <li>
-          <a
-            className="dropdown-item"
-            href="#"
-            onClick={() => handleOptionSelect("kafkaOffset")}
-          >
-            kafkaOffset
-          </a>
-        </li>
-        <li>
-          <a
-            className="dropdown-item"
-            href="#"
-            onClick={() => handleOptionSelect("kafkaPartition")}
-          >
-            kafkaPartition
-          </a>
-        </li>
-        <li>
-          <a
-            className="dropdown-item"
-            href="#"
-            onClick={() => handleOptionSelect("kafkaTopic")}
-          >
-            kafkaTopic
-          </a>
-        </li>
-        <li>
-          <a
-            className="dropdown-item"
-            href="#"
-            onClick={() => handleOptionSelect("publisherSystemId")}
-          >
-            publisherSystemId
-          </a>
-        </li>
-        <li>
-          <a
-            className="dropdown-item"
-            href="#"
-            onClick={() => handleOptionSelect("retryBudget")}
-          >
-            retryBudget
-          </a>
-        </li>
-        <li>
-          <a
-            className="dropdown-item"
-            href="#"
-            onClick={() => handleOptionSelect("retryCount")}
-          >
-            retryCount
-          </a>
-        </li>
-        <li>
-          <a
-            className="dropdown-item"
-            href="#"
-            onClick={() => handleOptionSelect("sequenceKey")}
-          >
-            sequenceKey
-          </a>
-        </li>
+        {optionItems.map((option) => (
+          <li key={option}>
+            <a
+              className="dropdown-item"
+              href="#"
+              onClick={() => handleOptionSelect(option)}
+            >
+              {option}
+            </a>
+          </li>
+        ))}
       </ul>
       <input
         type="text"
