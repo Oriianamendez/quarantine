@@ -15,25 +15,24 @@ export function SearchDropdown({
 
   const optionItems = [
     "id",
+    "eventId",
+    "correlationId",
     "allocationNid",
     "amount",
-    "correlationId",
     "createdAt",
     "currency",
-    "eventId",
     "failureReason",
     "kafkaOffset",
     "kafkaPartition",
     "kafkaTopic",
     "publisherSystemId",
     "retryBudget",
+    "transactionType",
+    "transactionInstrument",
     "retryCount",
     "sequenceKey",
+    "updatedAt",
   ];
-
-  optionItems.forEach((item) => {
-    return item;
-  });
 
   return (
     <div className="dropdown input-group mb-3">
